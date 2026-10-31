@@ -1,0 +1,1 @@
+export default function Loading(){return <div className="loading-screen"><span className="loading-mark">V</span><p>Loading varchasv...</p></div>}

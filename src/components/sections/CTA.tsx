@@ -1,0 +1,3 @@
+import Button from "@/components/ui/Button";
+import Container from "@/components/ui/Container";
+export default function CTA(){return <section className="cta-section"><Container><div className="cta-box"><div><span className="eyebrow">HAVE A BIG IDEA?</span><h2>Let’s Create Something Extraordinary</h2><p>Your next chapter in growth starts here. Let’s make it happen.</p></div><Button href="/contact" variant="light">Get Started</Button></div></Container></section>}
