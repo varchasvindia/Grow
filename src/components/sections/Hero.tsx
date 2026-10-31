@@ -1,4 +1,3 @@
-
 "use client";
 
 import Image from "next/image";
@@ -13,6 +12,7 @@ export default function Hero() {
       <div className="hero-orbit orbit-two" />
 
       <div className="container hero-inner">
+        {/* HERO CONTENT */}
         <motion.div
           className="hero-copy"
           initial={{ opacity: 0, y: 24 }}
@@ -20,7 +20,7 @@ export default function Hero() {
           transition={{ duration: 0.7 }}
         >
           <span className="eyebrow">
-            MARKETING&nbsp; | &nbsp;PR&nbsp; | &nbsp;BRANDING&nbsp; |
+            MARKETING&nbsp; | &nbsp;PR&nbsp; |&nbsp;DIGITAL SOLUTIONS &nbsp;BRANDING&nbsp; |
             &nbsp;DIGITAL SOLUTIONS
           </span>
 
@@ -46,31 +46,58 @@ export default function Hero() {
           </div>
         </motion.div>
 
-        {/* Varchasv Brand Emblem */}
-        <motion.div
-          className="hero-art"
-          initial={{ opacity: 0, scale: 0.8, rotate: -8 }}
-          animate={{ opacity: 1, scale: 1, rotate: 0 }}
-          transition={{ duration: 1, ease: "easeOut" }}
-        >
+        {/* BRAND EMBLEM AND ORBITS */}
+
+        <div className="hero-art">
           <div className="hero-glow" />
 
-          <Image
-            src="/images/Varchasv_Logo_Emblem.png"
-            alt="Varchasv India 3D turquoise brand emblem"
-            width={609}
-            height={609}
-            priority
-            className="hero-emblem"
-          />
-        </motion.div>
+          <div className="hero-orbit-system">
+            {/* Outer rotating orbit */}
+            <div className="service-orbit">
+              <div className="service-orbit-track">
+                <span className="service-label service-top">MARKETING</span>
+
+                <span className="service-label service-right">
+                  PUBLIC RELATIONS
+                </span>
+
+                <span className="service-label service-bottom">BRANDING</span>
+
+                <span className="service-label service-left">
+                  DIGITAL SOLUTIONS
+                </span>
+              </div>
+            </div>
+
+            {/* Middle rotating orbit */}
+            <div className="orbit-ring orbit-ring-two">
+              <span className="orbit-dot dot-two" />
+            </div>
+
+            {/* Inner rotating orbit */}
+            <div className="orbit-ring orbit-ring-one">
+              <span className="orbit-dot dot-one" />
+            </div>
+
+            {/* Stationary logo */}
+            <div className="hero-emblem-wrap">
+              <Image
+                src="/images/Varchasv_Logo_Emblem.png"
+                alt="Varchasv Brand Emblem"
+                width={609}
+                height={609}
+                priority
+                className="hero-emblem"
+              />
+            </div>
+          </div>
+        </div>
       </div>
 
+      {/* HERO FOOTER */}
       <div className="hero-bottom container">
         <span>Ideas that move businesses forward</span>
-        <span className="scroll-indicator">
-          SCROLL TO EXPLORE&nbsp; ↓
-        </span>
+        <span className="scroll-indicator">SCROLL TO EXPLORE&nbsp; ↓</span>
       </div>
     </section>
   );

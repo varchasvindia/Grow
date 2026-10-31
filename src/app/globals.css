@@ -14,8 +14,10 @@
     --line: rgba(174, 171, 224, .16)
 }
 
-* {
-    box-sizing: border-box
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 html {
@@ -28,8 +30,14 @@ body {
     color: var(--text);
     font-family: var(--font-inter), Arial, sans-serif;
     font-size: 14px;
-    line-height: 1.6
+    line-height: 1.6;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: clip;
+
+
 }
+
 
 a {
     color: inherit;
@@ -68,53 +76,69 @@ button {
     justify-content: space-between
 }
 
+/* =========================================
+   BRAND LOGO   
+   ========================================= */
+
 .brand {
-  display: inline-flex;
-  align-items: center;
-  text-decoration: none;
-  flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px; /* Adds space between the icon and the wordmark */
+    text-decoration: none;
+    flex-shrink: 0;
 }
 
+/* Base style for BOTH logos */
 .brand-logo {
-  display: block;
-  width: 150px;
-  height: auto;
-  object-fit: contain;
+    display: block;
+    height: auto;
+    object-fit: contain;
 }
 
-/* Footer logo */
-.brand-footer .brand-logo {
-  width: 160px;
+/* 1. The Icon Logo (Triangle) */
+.brand-logo-icon {
+    width: 42px; /* Kept from your .brand-mark size */
+    height: 42px;
+    /* Your original glow effect applied here */
+    filter: drop-shadow(0 0 10px rgba(20, 226, 207, .22)); 
+}
+
+/* 2. The Wordmark Logo (Text) */
+.brand-logo-wordmark {
+    width: 150px; /* Kept from your original .brand-logo width */
+}
+
+/* Footer logo adjustments */
+.brand-footer {
+    gap: 10px; /* Slightly tighter gap for footer */
+}
+
+.brand-footer .brand-logo-icon {
+    width: 32px; /* Slightly smaller icon for footer */
+    height: 32px;
+}
+
+.brand-footer .brand-logo-wordmark {
+    width: 160px; /* Kept from your original footer width */
 }
 
 /* Mobile */
 @media (max-width: 768px) {
-  .brand-logo {
-    width: 140px;
-  }
+    .brand-logo-wordmark {
+        width: 140px; /* Kept from your original mobile width */
+    }
+    
+    .brand-logo-icon {
+        width: 36px;
+        height: 36px;
+    }
 }
 
-.brand-mark {
-    width: 42px;
-    height: 42px;
-    filter: drop-shadow(0 0 10px rgba(20, 226, 207, .22))
-}
-
-.brand strong {
-    font-family: var(--font-manrope);
-    font-size: 20px;
-    line-height: 1;
-    letter-spacing: -.8px;
-    display: block
-}
-
-.brand small {
-    display: block;
-    font-size: 8px;
-    letter-spacing: 4px;
-    color: #c3bfd4;
-    margin-top: 5px
-}
+/* 
+  NOTE: I removed the `.brand strong`, `.brand small`, and `.brand-mark` 
+  classes from your original CSS because you are now using actual image files 
+  for the text and the icon, making those text-based CSS rules redundant. 
+*/
 
 .desktop-nav {
     display: flex;
@@ -177,75 +201,35 @@ button {
 }
 
 
-.hero-art {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  max-width: 540px;
-  aspect-ratio: 1 / 1;
-  margin-inline: auto;
-}
+/* =========================================
+   HERO SECTION - RESPONSIVE & OVERFLOW FIX
+========================================= */
 
-.hero-emblem {
-  position: relative;
-  z-index: 2;
-  display: block;
-  width: 100%;
-  height: auto;
-  object-fit: contain;
-  filter: drop-shadow(0 15px 35px rgba(0, 220, 213, 0.2));
-}
-
-.hero-glow {
-  position: absolute;
-  width: 75%;
-  height: 75%;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: radial-gradient(
-    circle,
-    rgba(0, 220, 213, 0.25) 0%,
-    rgba(0, 185, 184, 0.12) 40%,
-    transparent 70%
-  );
-  filter: blur(45px);
-  border-radius: 50%;
-  z-index: 1;
-}
-
-@media (max-width: 768px) {
-  .hero-art {
-    max-width: 360px;
-  }
-}
-
-
-.hero:after {
-    content: "";
-    position: absolute;
-    inset: auto -10% 8% 40%;
-    height: 150px;
-    background: linear-gradient(90deg, transparent, rgba(184, 26, 152, .35), rgba(255, 93, 119, .35), transparent);
-    filter: blur(38px);
-    transform: rotate(-12deg);
-    pointer-events: none
+.hero {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    isolation: isolate;
 }
 
 .hero-inner {
+    width: 100%;
+    max-width: 1240px;
+    margin-inline: auto;
+    padding: 55px 24px 40px;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     align-items: center;
     position: relative;
     z-index: 2;
-    padding-top: 55px;
-    padding-bottom: 40px
+    gap: 20px;
 }
 
 .hero-copy {
-    max-width: 520px
+    width: 100%;
+    max-width: 520px;
+    min-width: 0;
 }
 
 .eyebrow {
@@ -253,7 +237,7 @@ button {
     color: #d7c6e2;
     font-size: 10px;
     letter-spacing: 2.1px;
-    font-weight: 700
+    font-weight: 700;
 }
 
 .hero h1,
@@ -263,7 +247,7 @@ button {
     line-height: 1.05;
     letter-spacing: -2.7px;
     margin: 22px 0 19px;
-    font-weight: 800
+    font-weight: 800;
 }
 
 .hero h1 span,
@@ -271,22 +255,23 @@ button {
     background: linear-gradient(90deg, #ff7a75, #ed4599, #b14edb);
     background-clip: text;
     -webkit-background-clip: text;
-    color: transparent
+    color: transparent;
 }
 
-.hero-copy>p,
+.hero-copy > p,
 .page-hero p {
     max-width: 420px;
     color: #c0bdcf;
     font-size: 14px;
-    line-height: 1.8
+    line-height: 1.8;
 }
 
 .hero-actions {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
     gap: 30px;
-    margin-top: 28px
+    margin-top: 28px;
 }
 
 .text-link {
@@ -295,71 +280,496 @@ button {
     gap: 8px;
     font-size: 12px;
     font-weight: 700;
-    color: #f4eefa
+    color: #f4eefa;
 }
 
 .text-link:hover {
-    color: var(--aqua)
+    color: var(--aqua);
 }
+
+/* =========================================
+   HERO ARTWORK
+========================================= */
 
 .hero-art {
-    height: 390px;
-    display: grid;
-    place-items: center;
-    position: relative
+    position: relative;
+    width: 100%;
+    max-width: 540px;
+    aspect-ratio: 1 / 1;
+    margin-inline: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: visible;
 }
 
-.hero-art svg {
-    width: min(100%, 430px);
-    height: auto;
-    position: relative;
-    z-index: 1;
-    filter: drop-shadow(0 18px 40px rgba(13, 219, 202, .18))
-}
+/* Background glow */
 
 .hero-glow {
     position: absolute;
-    width: 250px;
-    height: 250px;
+    width: 65%;
+    aspect-ratio: 1 / 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     border-radius: 50%;
-    background: rgba(0, 212, 203, .16);
-    filter: blur(70px)
+    background: radial-gradient(
+        circle,
+        rgba(0, 220, 213, 0.25) 0%,
+        rgba(0, 185, 184, 0.12) 40%,
+        transparent 70%
+    );
+    filter: blur(35px);
+    z-index: 0;
+    pointer-events: none;
 }
 
-.hero-orbit {
+/* Logo */
+
+.hero-emblem {
+    position: relative;
+    z-index: 3;
+    display: block;
+    width: 58%;
+    height: auto;
+    max-width: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 15px 35px rgba(0, 220, 213, 0.2));
+}
+
+/* =========================================
+   CIRCULAR ORBIT SYSTEM
+   All rings stay inside hero artwork.
+========================================= 
+
+.hero-orbit-system {
     position: absolute;
-    border: 1px solid rgba(227, 70, 177, .15);
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.orbit-ring {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    aspect-ratio: 1 / 1;
+    border: 1px solid rgba(35, 220, 210, 0.22);
     border-radius: 50%;
-    transform: rotate(-25deg)
+    transform: translate(-50%, -50%);
 }
 
-.orbit-one {
-    width: 750px;
-    height: 220px;
-    right: -80px;
-    top: 230px
+.orbit-ring-one {
+    width: 70%;
+    border-color: rgba(35, 220, 210, 0.25);
 }
 
-.orbit-two {
-    width: 650px;
-    height: 180px;
-    right: -120px;
-    top: 260px;
-    border-color: rgba(18, 210, 202, .1)
+.orbit-ring-two {
+    width: 86%;
+    border-color: rgba(153, 91, 255, 0.28);
 }
+
+.orbit-ring-three {
+    width: 98%;
+    border-color: rgba(35, 220, 210, 0.14);
+}
+
+
+
+.orbit-dot {
+    position: absolute;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #20dfd0;
+    box-shadow: 0 0 16px rgba(32, 223, 208, 0.8);
+}
+
+.dot-one {
+    top: 13%;
+    left: 16%;
+}
+
+.dot-two {
+    top: 50%;
+    right: -4px;
+    background: #a66bff;
+    box-shadow: 0 0 16px rgba(166, 107, 255, 0.8);
+}
+
+.dot-three {
+    bottom: 9%;
+    left: 25%;
+    background: #f05acb;
+    box-shadow: 0 0 16px rgba(240, 90, 203, 0.8);
+}
+    -----------------*/
+
+    
+/* =========================================
+   VARCHASV - ROTATING SERVICE ORBIT
+========================================= */
+
+.hero-orbit-system {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 1 / 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    isolation: isolate;
+}
+
+/* Outer service orbit */
+
+.service-orbit {
+    position: absolute;
+    width: 98%;
+    height: 98%;
+    border: 1px solid rgba(32, 223, 208, 0.25);
+    border-radius: 50%;
+    animation: serviceOrbitRotate 32s linear infinite;
+    pointer-events: none;
+}
+
+/* Rotating service labels */
+
+.service-orbit-track {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+}
+
+.service-label {
+    position: absolute;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 9px 15px;
+    white-space: nowrap;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    color: #e9e5f5;
+    background: rgba(11, 20, 49, 0.94);
+    border: 1px solid rgba(32, 223, 208, 0.38);
+    border-radius: 30px;
+    box-shadow: 0 0 22px rgba(32, 223, 208, 0.08);
+    transform: translate(-50%, -50%);
+}
+
+/* Four positions around the circle */
+
+.service-top {
+    top: 0;
+    left: 50%;
+}
+
+.service-right {
+    top: 50%;
+    left: 100%;
+}
+
+.service-bottom {
+    top: 100%;
+    left: 50%;
+}
+
+.service-left {
+    top: 50%;
+    left: 0;
+}
+
+/* Middle orbit */
+
+.orbit-ring-two {
+    position: absolute;
+    width: 83%;
+    height: 83%;
+    border: 1px solid rgba(166, 107, 255, 0.35);
+    border-radius: 50%;
+    animation: orbitRotateReverse 24s linear infinite;
+}
+
+/* Inner orbit */
+
+.orbit-ring-one {
+    position: absolute;
+    width: 68%;
+    height: 68%;
+    border: 1px solid rgba(32, 223, 208, 0.24);
+    border-radius: 50%;
+    animation: orbitRotate 18s linear infinite;
+}
+
+/* Orbit points */
+
+.orbit-dot {
+    position: absolute;
+    width: 9px;
+    height: 9px;
+    top: 50%;
+    left: -5px;
+    border-radius: 50%;
+    background: #20dfd0;
+    box-shadow: 0 0 16px rgba(32, 223, 208, 0.9);
+}
+
+.dot-two {
+    background: #a66bff;
+    box-shadow: 0 0 16px rgba(166, 107, 255, 0.9);
+}
+
+/* Logo stays stationary */
+
+.hero-emblem-wrap {
+    position: relative;
+    z-index: 5;
+    width: 55%;
+    height: 55%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-emblem {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    animation: emblemFloat 5s ease-in-out infinite;
+}
+
+/* Animations */
+
+@keyframes serviceOrbitRotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes orbitRotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes orbitRotateReverse {
+    from {
+        transform: rotate(360deg);
+    }
+    to {
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes emblemFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-7px);
+    }
+}
+
+/* Responsive adjustments */
+
+@media (max-width: 768px) {
+    .hero-orbit-system {
+        width: 100%;
+    }
+
+    .service-label {
+        font-size: 8px;
+        padding: 7px 10px;
+        letter-spacing: 0.8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .service-label {
+        font-size: 7px;
+        padding: 6px 8px;
+        letter-spacing: 0.4px;
+    }
+
+    .hero-emblem-wrap {
+        width: 52%;
+        height: 52%;
+    }
+}
+
+/* Respect reduced-motion accessibility settings */
+
+@media (prefers-reduced-motion: reduce) {
+    .service-orbit,
+    .orbit-ring-one,
+    .orbit-ring-two,
+    .hero-emblem {
+        animation: none !important;
+    }
+}
+
+
+/* =========================================
+   HERO DECORATIVE BACKGROUND
+========================================= */
+
+.hero::after {
+    content: "";
+    position: absolute;
+    width: 55%;
+    height: 120px;
+    right: 0;
+    bottom: 8%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(184, 26, 152, 0.25),
+        rgba(255, 93, 119, 0.25),
+        transparent
+    );
+    filter: blur(38px);
+    transform: rotate(-12deg);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* =========================================
+   HERO BOTTOM
+========================================= */
 
 .hero-bottom {
     position: absolute;
     bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
+    width: min(calc(100% - 48px), 1192px);
     display: flex;
     justify-content: space-between;
+    gap: 15px;
     color: #77758f;
     font-size: 9px;
     letter-spacing: 1.4px;
-    text-transform: uppercase
+    text-transform: uppercase;
+    z-index: 3;
 }
+
+/* =========================================
+   TABLET RESPONSIVE
+========================================= */
+
+@media (max-width: 1024px) {
+    .hero-inner {
+        gap: 10px;
+    }
+
+    .hero h1 {
+        font-size: clamp(42px, 5.2vw, 58px);
+    }
+
+    .hero-art {
+        max-width: 440px;
+    }
+}
+
+/* =========================================
+   MOBILE RESPONSIVE
+========================================= */
+
+@media (max-width: 768px) {
+    .hero {
+        overflow: hidden;
+    }
+
+    .hero-inner {
+        grid-template-columns: minmax(0, 1fr);
+        padding: 65px 22px 65px;
+        gap: 35px;
+    }
+
+    .hero-copy {
+        max-width: 600px;
+        margin-inline: auto;
+        text-align: center;
+    }
+
+    .hero h1 {
+        font-size: clamp(40px, 8vw, 58px);
+        letter-spacing: -2px;
+    }
+
+    .hero-copy > p {
+        margin-inline: auto;
+    }
+
+    .hero-actions {
+        justify-content: center;
+    }
+
+    .hero-art {
+        width: min(100%, 390px);
+        max-width: 390px;
+    }
+
+    .hero-bottom {
+        position: relative;
+        left: auto;
+        bottom: auto;
+        transform: none;
+        width: 100%;
+        padding: 0 20px 20px;
+        justify-content: center;
+        flex-wrap: wrap;
+        text-align: center;
+    }
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+    .hero-inner {
+        padding: 48px 18px 45px;
+        gap: 25px;
+    }
+
+    .hero h1 {
+        font-size: clamp(36px, 10vw, 46px);
+        letter-spacing: -1.8px;
+    }
+
+    .eyebrow {
+        font-size: 9px;
+        letter-spacing: 1.4px;
+    }
+
+    .hero-art {
+        width: min(100%, 330px);
+    }
+
+    .orbit-dot {
+        width: 7px;
+        height: 7px;
+    }
+
+    .hero-actions {
+        gap: 18px;
+    }
+}
+
 
 .section {
     padding: 88px 0
@@ -1058,9 +1468,24 @@ button {
 }
 
 .loading-mark {
-    font-size: 80px;
-    color: var(--aqua);
-    font-weight: 900
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+    animation: logoPulse 1.8s ease-in-out infinite;
+}
+
+@keyframes logoPulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(1.08);
+        opacity: 0.7;
+    }
 }
 
 @media(max-width:900px) {
@@ -1315,5 +1740,617 @@ button {
 
     .footer-bottom div {
         gap: 13px
+    }
+}
+
+
+
+/* =========================================
+   VARCHASV ABOUT PAGE
+========================================= */
+
+.about-hero {
+    min-height: 550px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    background:
+        radial-gradient(ellipse at 85% 50%, rgba(126, 25, 137, .23), transparent 40%),
+        linear-gradient(120deg, #080817, #100a20);
+}
+
+.about-hero-glow {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    right: -100px;
+    top: 0;
+    border-radius: 50%;
+    background: rgba(14, 211, 197, .09);
+    filter: blur(100px);
+}
+
+.about-hero-content {
+    max-width: 850px;
+    position: relative;
+    z-index: 2;
+    padding: 90px 0;
+}
+
+.about-eyebrow {
+    color: #c7c1dc;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2.3px;
+}
+
+.eyebrow-line {
+    width: 25px;
+    height: 2px;
+    background: linear-gradient(90deg, #19e2cf, #e842a0);
+}
+
+.about-hero h1 {
+    font-family: var(--font-manrope);
+    font-size: clamp(42px, 6vw, 70px);
+    font-weight: 800;
+    letter-spacing: -3px;
+    line-height: 1.13;
+    margin: 25px 0;
+}
+
+.about-hero h1 span,
+.philosophy-content h2 span,
+.who-heading h2 span,
+.about-section-heading h2 span,
+.brand-message h2 span {
+    background: linear-gradient(90deg, #ff826c, #ed4098, #b74ae0);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.about-hero-content>p {
+    max-width: 610px;
+    color: #bcb9ce;
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+.about-hero-actions {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    margin-top: 30px;
+}
+
+.about-text-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #eeeafa;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.about-text-link:hover {
+    color: #20dfce;
+}
+
+.about-hero-bottom {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid rgba(255, 255, 255, .1);
+    padding: 17px 0;
+    color: #77748d;
+    font-size: 9px;
+    letter-spacing: 1.5px;
+}
+
+/* PHILOSOPHY */
+
+.philosophy-section {
+    padding: 100px 0;
+    background: #0b0b1c;
+}
+
+.philosophy-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 65px;
+}
+
+.philosophy-content h2,
+.who-heading h2,
+.about-section-heading h2 {
+    font-family: var(--font-manrope);
+    font-size: clamp(35px, 4vw, 49px);
+    line-height: 1.18;
+    letter-spacing: -1.8px;
+    margin: 20px 0;
+}
+
+.philosophy-content>p,
+.who-description p {
+    color: #aaa8bf;
+    font-size: 13px;
+    line-height: 2;
+    margin-bottom: 17px;
+}
+
+.philosophy-visual {
+    min-height: 420px;
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, .09);
+    border-radius: 20px;
+    background:
+        radial-gradient(circle at 50% 45%, rgba(16, 205, 190, .14), transparent 45%),
+        linear-gradient(145deg, #13142c, #0b0b1c);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.philosophy-glow {
+    position: absolute;
+    width: 240px;
+    height: 240px;
+    border-radius: 50%;
+    background: rgba(19, 221, 205, .17);
+    filter: blur(75px);
+}
+
+.philosophy-symbol {
+    width: 230px;
+    position: relative;
+    z-index: 1;
+    filter: drop-shadow(0 10px 30px rgba(12, 220, 203, .25));
+}
+
+.philosophy-caption {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 5px;
+    z-index: 2;
+}
+
+.philosophy-caption strong {
+    font-family: var(--font-manrope);
+    font-size: 22px;
+    letter-spacing: 1px;
+}
+
+.philosophy-caption span {
+    color: #9995b0;
+    font-size: 9px;
+    letter-spacing: 3px;
+}
+
+.floating-word {
+    position: absolute;
+    padding: 8px 14px;
+    border: 1px solid rgba(255, 255, 255, .15);
+    border-radius: 50px;
+    background: rgba(14, 15, 36, .8);
+    color: #c9c6db;
+    font-size: 9px;
+    letter-spacing: 1.4px;
+}
+
+.word-one {
+    left: 7%;
+    top: 22%;
+}
+
+.word-two {
+    right: 6%;
+    top: 44%;
+}
+
+.word-three {
+    left: 10%;
+    bottom: 17%;
+}
+
+/* WHO WE ARE */
+
+.who-section {
+    padding: 85px 0;
+    background: linear-gradient(110deg, #100d20, #111128);
+}
+
+.who-grid {
+    display: grid;
+    grid-template-columns: .9fr 1.1fr;
+    gap: 75px;
+    align-items: center;
+}
+
+.who-heading h2 {
+    margin-bottom: 0;
+}
+
+/* VISION MISSION */
+
+.vision-section {
+    padding: 90px 0;
+    background: #09091a;
+}
+
+.vision-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+}
+
+.vision-card {
+    padding: 38px;
+    min-height: 310px;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, .1);
+    background: linear-gradient(145deg, #15152e, #0f1024);
+    transition: .3s ease;
+}
+
+.vision-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(27, 221, 207, .4);
+}
+
+.vision-card-two {
+    background:
+        radial-gradient(circle at 100% 100%, rgba(179, 46, 193, .13), transparent 50%),
+        #131128;
+}
+
+.vision-icon {
+    width: 52px;
+    height: 52px;
+    display: grid;
+    place-items: center;
+    color: #21e0cf;
+    border-radius: 13px;
+    background: rgba(19, 220, 202, .12);
+    margin-bottom: 24px;
+}
+
+.vision-card h3 {
+    font-family: var(--font-manrope);
+    font-size: 25px;
+    line-height: 1.3;
+    margin: 14px 0;
+}
+
+.vision-card p {
+    color: #aaa8bf;
+    font-size: 12px;
+    line-height: 1.9;
+}
+
+/* VALUES */
+
+.values-section,
+.capabilities-section {
+    padding: 95px 0;
+    background: #0c0c1e;
+}
+
+.about-section-heading {
+    max-width: 670px;
+    margin-bottom: 42px;
+}
+
+.about-section-heading h2 {
+    margin: 15px 0;
+}
+
+.about-section-heading>p {
+    color: #aaa8bf;
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 17px;
+}
+
+.value-card {
+    position: relative;
+    padding: 27px 24px;
+    min-height: 225px;
+    border: 1px solid rgba(174, 171, 224, .15);
+    border-radius: 14px;
+    background: linear-gradient(145deg, #15152e, #101025);
+    transition: .3s ease;
+}
+
+.value-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(231, 64, 151, .5);
+}
+
+.value-icon {
+    width: 43px;
+    height: 43px;
+    display: grid;
+    place-items: center;
+    color: #ff7da9;
+    background: rgba(240, 68, 145, .12);
+    border-radius: 11px;
+    margin-bottom: 19px;
+}
+
+.value-icon-2,
+.value-icon-5 {
+    color: #21decd;
+    background: rgba(19, 220, 202, .12);
+}
+
+.value-icon-3,
+.value-icon-6 {
+    color: #c57aff;
+    background: rgba(177, 67, 218, .13);
+}
+
+.value-number {
+    position: absolute;
+    top: 25px;
+    right: 23px;
+    color: #696680;
+    font-size: 10px;
+}
+
+.value-card h3,
+.capability-card h3 {
+    font-size: 15px;
+    margin: 0 0 9px;
+}
+
+.value-card p,
+.capability-card p {
+    color: #a8a6bd;
+    font-size: 11px;
+    line-height: 1.9;
+    margin: 0;
+}
+
+/* CAPABILITIES */
+
+.capabilities-section {
+    background: linear-gradient(120deg, #111027, #0b0b1d);
+}
+
+.capabilities-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+.capability-card {
+    padding: 27px 20px;
+    border: 1px solid rgba(255, 255, 255, .1);
+    border-radius: 13px;
+    background: rgba(20, 20, 45, .7);
+    transition: .3s ease;
+}
+
+.capability-card:hover {
+    border-color: rgba(18, 220, 204, .45);
+    transform: translateY(-5px);
+}
+
+.capability-card>svg {
+    color: #1edccc;
+    margin-bottom: 20px;
+}
+
+/* PROCESS */
+
+.process-section {
+    padding: 95px 0;
+    background: #09091a;
+}
+
+.process-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+.process-card {
+    padding: 25px 20px;
+    border: 1px solid rgba(255, 255, 255, .1);
+    border-radius: 13px;
+    background: #121229;
+}
+
+.process-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #20dece;
+    margin-bottom: 35px;
+}
+
+.process-top span {
+    color: #79758f;
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+.process-card h3 {
+    font-family: var(--font-manrope);
+    font-size: 18px;
+    margin: 0 0 10px;
+}
+
+.process-card p {
+    color: #aaa8bf;
+    font-size: 11px;
+    line-height: 1.9;
+}
+
+/* FINAL BRAND MESSAGE */
+
+.brand-message-section {
+    padding: 30px 0 90px;
+    background: #09091a;
+}
+
+.brand-message {
+    padding: 65px 35px;
+    text-align: center;
+    border-radius: 18px;
+    background:
+        radial-gradient(circle at 50% 0%, rgba(255, 255, 255, .12), transparent 40%),
+        linear-gradient(110deg, #8c2bad, #d62d8e 60%, #f17a66);
+}
+
+.brand-message h2 {
+    font-family: var(--font-manrope);
+    font-size: clamp(35px, 5vw, 57px);
+    line-height: 1.15;
+    letter-spacing: -2px;
+    margin: 20px 0;
+}
+
+.brand-message h2 span {
+    background: linear-gradient(90deg, #fff, #ffe1f2);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.brand-message>p {
+    max-width: 560px;
+    margin: 0 auto 28px;
+    color: rgba(255, 255, 255, .85);
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+.brand-message .about-eyebrow {
+    color: white;
+}
+
+.brand-message .button {
+    background: white;
+    color: #25132d;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+
+    .philosophy-grid,
+    .who-grid {
+        gap: 35px;
+    }
+
+    .capabilities-grid,
+    .process-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 700px) {
+    .about-hero {
+        min-height: auto;
+    }
+
+    .about-hero-content {
+        padding: 75px 0;
+    }
+
+    .about-hero h1 {
+        font-size: 43px;
+        letter-spacing: -2px;
+    }
+
+    .about-hero-content>p {
+        font-size: 13px;
+    }
+
+    .about-hero-actions {
+        flex-wrap: wrap;
+        gap: 18px;
+    }
+
+    .about-hero-bottom {
+        font-size: 8px;
+    }
+
+    .philosophy-section,
+    .who-section,
+    .vision-section,
+    .values-section,
+    .capabilities-section,
+    .process-section {
+        padding: 65px 0;
+    }
+
+    .philosophy-grid,
+    .who-grid,
+    .vision-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .philosophy-visual {
+        min-height: 340px;
+    }
+
+    .philosophy-symbol {
+        width: 180px;
+    }
+
+    .philosophy-content h2,
+    .who-heading h2,
+    .about-section-heading h2 {
+        font-size: 35px;
+    }
+
+    .values-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .vision-card {
+        padding: 28px;
+        min-height: auto;
+    }
+
+    .brand-message {
+        padding: 45px 20px;
+    }
+}
+
+@media (max-width: 440px) {
+
+    .values-grid,
+    .capabilities-grid,
+    .process-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-hero h1 {
+        font-size: 37px;
+    }
+
+    .about-hero-bottom {
+        gap: 10px;
+    }
+
+    .floating-word {
+        font-size: 8px;
     }
 }
