@@ -10,7 +10,7 @@ export default function Brand({ footer = false }: { footer?: boolean }) {
     >
       {/* 1. Icon Logo */}
       <Image
-        src="/images/varchasv_Logo_Emblem.png" // Replace with your icon filename
+        src="/images/Varchasv_Logo_Emblem.png" // Replace with your icon filename
         alt="Varchasv Logo"
         width={42} 
         height={42} 
