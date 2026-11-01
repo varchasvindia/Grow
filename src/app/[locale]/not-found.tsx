@@ -1,0 +1,3 @@
+import Link from "next/link";
+import Container from "@/components/ui/Container";
+export default function NotFound(){return <section className="page-hero"><Container><span className="eyebrow">404 - PAGE NOT FOUND</span><h1>This page took<br/><span>a wrong turn.</span></h1><p>The page you’re looking for may have moved or no longer exists.</p><Link href="/" className="button button-primary">Back to Home ↗</Link></Container></section>}

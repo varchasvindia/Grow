@@ -27,7 +27,7 @@ import Image from "next/image";
 export const metadata: Metadata = {
   title: "About Us",
   description:
-    "Discover VARCHASV — a strategic brand-building and digital solutions partner helping businesses build identity, strengthen public presence and achieve meaningful growth.",
+    "Discover VARCHASV - a strategic brand-building and digital solutions partner helping businesses build identity, strengthen public presence and achieve meaningful growth.",
   openGraph: {
     title: "About VARCHASV | Brand Banao. Varchasv Banao.",
     description:

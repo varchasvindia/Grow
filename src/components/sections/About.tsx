@@ -34,8 +34,8 @@ export default function About() {
 
           <div className="about-image-wrap">
             <Image
-              src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=90"
-              alt="Contemporary premium office lounge"
+              src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=90"
+              alt="Creative strategy team collaborating in a modern studio"
               fill
               sizes="(max-width: 800px) 100vw, 50vw"
               className="about-image"

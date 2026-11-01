@@ -5,6 +5,7 @@ import Stats from "@/components/sections/Stats";
 import CaseStudies from "@/components/sections/CaseStudies";
 import Testimonials from "@/components/sections/Testimonials";
 import CTA from "@/components/sections/CTA";
+import Partners from "@/components/sections/Partners";
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
       <Stats />
       <CaseStudies />
       <Testimonials />
+      {/* <Partners /> */}
       <CTA />
     </>
   );
