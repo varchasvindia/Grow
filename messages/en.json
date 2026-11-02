@@ -1,3 +1,566 @@
 {
-  "Home": { "heroTitle": "Your Vision. Our Strategy. Real Growth." }
+    "Nav": {
+        "home": "Home",
+        "services": "Services",
+        "about": "About",
+        "projects": "Case Studies",
+        "blog": "Blog",
+        "contact": "Contact",
+        "getStarted": "Get Started"
+    },
+    "Hero": {
+        "eyebrow": "Marketing • PR • Branding • Digital Solutions",
+        "titleLine1": "Your Vision.",
+        "titleLine2": "Our Strategy.",
+        "titleLine3": "Real Growth.",
+        "subtitle": "We combine creativity, technology and strategy to help your brand stand out, get noticed and scale faster.",
+        "ctaPrimary": "Get Started",
+        "ctaSecondary": "Explore Services",
+        "tagline": "Ideas that move businesses forward",
+        "scrollHint": "Scroll to explore ↓",
+        "orbit": {
+            "marketing": "MARKETING",
+            "pr": "PUBLIC RELATIONS",
+            "branding": "BRANDING",
+            "digital": "DIGITAL SOLUTIONS"
+        }
+    },
+    "Services": {
+        "eyebrow": "WHAT WE DO",
+        "title": "Our Services",
+        "subtitle": "Integrated digital solutions for modern businesses.",
+        "items": {
+            "digitalMarketing": {
+                "title": "Digital Marketing",
+                "description": "SEO, Social Media, Paid Ads, Content & more."
+            },
+            "startupSupport": {
+                "title": "Startup Support",
+                "description": "Strategy, Funding, Mentorship, Growth."
+            },
+            "prMedia": {
+                "title": "PR & Media",
+                "description": "Media Relations, Brand PR, Thought Leadership."
+            },
+            "website": {
+                "title": "Website Design & Development",
+                "description": "Modern, Scalable, SEO-friendly Websites."
+            },
+            "branding": {
+                "title": "Branding & Design",
+                "description": "Logo, Identity, Creative, Positioning."
+            },
+            "digitalSolutions": {
+                "title": "Digital Solutions",
+                "description": "Automation, Analytics, CRM & More."
+            }
+        }
+    },
+    "About": {
+        "eyebrow": "ABOUT VARCHASV INDIA",
+        "titleLine1": "Built for Brands",
+        "titleLine2": "That Refuse to Blend In.",
+        "paragraph1": "varchasv India is a strategy-first marketing, branding and PR studio for founders who want more than templates. We partner with ambitious teams to shape how their brand looks, sounds, and converts - from positioning to launch to scale.",
+        "paragraph2": "Every engagement starts with your business goal, not a deck. Then we bring together the right mix of creative, content, performance and PR to turn that goal into measurable growth across every channel that matters to you.",
+        "cta": "Know More"
+    },
+    "Stats": {
+        "projects": "Projects Delivered",
+        "clients": "Happy Clients",
+        "industries": "Industries Served",
+        "retention": "Client Retention Rate"
+    },
+    "CaseStudies": {
+        "title": "Our Success Stories",
+        "subtitle": "Real Brands. Real Results.",
+        "viewAll": "View All",
+        "readMore": "Read case study"
+    },
+    "Testimonials": {
+        "eyebrow": "KIND WORDS",
+        "title": "What Our Clients Say",
+        "items": {
+            "neha": {
+                "quote": "varchasv India helped us build a powerful brand presence and drive meaningful results. Their team is professional, creative and committed.",
+                "name": "Neha Kapoor",
+                "role": "Founder, Retail Brand"
+            },
+            "arjun": {
+                "quote": "A thoughtful team that understood our goals and translated them into a digital experience that feels distinctive and performs beautifully.",
+                "name": "Arjun Mehta",
+                "role": "Co-founder, Technology Startup"
+            },
+            "priya": {
+                "quote": "From strategy to execution, the varchasv team brought clarity, consistency and fresh ideas to every part of our campaign.",
+                "name": "Priya Sharma",
+                "role": "Marketing Director"
+            }
+        }
+    },
+    "CTA": {
+        "eyebrow": "HAVE A BIG IDEA?",
+        "title": "Let's Create Something Extraordinary.",
+        "subtitle": "Your success starts with a conversation. Let's talk.",
+        "button": "Get Started"
+    },
+    "Blog": {
+        "eyebrow": "INSIGHTS",
+        "titleLine1": "Ideas that move brands",
+        "titleLine2": "forward.",
+        "subtitle": "Practical thinking on marketing, branding and growth - written by the team at varchasv India.",
+        "featured": "Featured",
+        "readArticle": "Read article",
+        "read": "Read",
+        "keepReading": "Keep reading",
+        "backToAll": "All posts",
+        "author": "varchasv India",
+        "share": "Share",
+        "shareTwitter": "Share on Twitter",
+        "shareLinkedIn": "Share on LinkedIn",
+        "copyLink": "Copy link",
+        "newsletterTitle": "Get insights in your inbox",
+        "newsletterDesc": "One thoughtful email per month. No spam, no fluff - just the ideas we're actually thinking about.",
+        "subscribe": "Subscribe via email"
+    },
+    "Projects": {
+        "title": "Our Projects",
+        "subtitle": "A selection of work we're proud of.",
+        "backToAll": "Back to Projects",
+        "detailsComingSoon": "Project details coming soon. This is where you describe the challenge, the strategy, and the results delivered for {name}."
+    },
+    "Partners": {
+        "titleLine1": "Partners in",
+        "titleLine2": "Growth",
+        "subtitle": "We collaborate with industry leaders to deliver exceptional value to our clients.",
+        "ctaTitle": "Become Our Next Partner",
+        "ctaLink": "Let's Connect"
+    },
+    "Contact": {
+        "eyebrow": "LET'S TALK",
+        "title": "Are you considering a new project?",
+        "subtitle": "Tell us about your vision. We would love to connect and discuss it with you.",
+        "sidebarTitle": "Let's make something meaningful.",
+        "sidebarDesc": "Share your goals and we'll get back to you to discuss the next steps.",
+        "name": "Your name",
+        "namePlaceholder": "Enter your name",
+        "email": "Email address",
+        "phone": "Phone number",
+        "optional": "optional",
+        "message": "How can we help?",
+        "messagePlaceholder": "Tell us a little about your project...",
+        "submit": "Send Enquiry",
+        "sending": "Sending…",
+        "success": "Thank you! Your enquiry has been received.",
+        "error": "Something went wrong. Please try again."
+    },
+    "Footer": {
+        "tagline": "A full-service marketing, PR and branding firm helping ambitious brands grow through strategy, creativity and measurable outcomes.",
+        "exploreHeading": "Explore",
+        "servicesHeading": "Services",
+        "contactHeading": "Get in touch",
+        "motto": "Your supremacy endures",
+        "copyright": "varchasv India. All rights reserved.",
+        "privacy": "Privacy Policy",
+        "terms": "Terms & Conditions",
+        "refund": "Refund Policy"
+    },
+    "Legal": {
+        "lastUpdated": "Last updated",
+        "backToHome": "Back to home",
+        "seeAlso": "See also",
+        "privacyTitle": "Privacy Policy",
+        "termsTitle": "Terms & Conditions",
+        "refundTitle": "Refund & Cancellation Policy"
+    },
+    "Common": {
+        "loading": "Loading…",
+        "notFound": "Page not found",
+        "notFoundDesc": "The page you're looking for doesn't exist or has been moved.",
+        "goHome": "Go home"
+    },
+    "AboutPage": {
+        "hero": {
+            "eyebrow": "ABOUT VARCHASV",
+            "titleLine1": "We Build Brands.",
+            "titleLine2": "Shape Public Presence.",
+            "titleLine3": "Create Meaningful Growth.",
+            "subtitle": "We build brands, shape public presence and turn ambitious ideas into meaningful growth. One strategic partner for your digital journey.",
+            "ctaPrimary": "Let's Build Your Brand",
+            "ctaSecondary": "Explore Our Services",
+            "bottomLeft": "STRATEGY. CREATIVITY. IDENTITY. GROWTH.",
+            "bottomRight": "01 / ABOUT US"
+        },
+        "philosophy": {
+            "eyebrow": "OUR PHILOSOPHY",
+            "titleLine1": "Brand Bano.",
+            "titleLine2": "Varchasv Banao.",
+            "p1": "In today's digital world, simply having a business is not enough. People need to know who you are, what you stand for and why they should choose you.",
+            "p2": "A website alone does not build a brand. A logo alone does not create recognition. True brand presence comes from the right identity, consistent communication, strategic visibility and the trust you build with people.",
+            "p3": "At VARCHASV, we bring these elements together to help businesses establish their identity and create a meaningful presence in the world.",
+            "caption1": "YOUR IDENTITY.",
+            "caption2": "YOUR VARCHASV.",
+            "caption3": "YOUR RECOGNITION.",
+            "float1": "IDENTITY",
+            "float2": "VISIBILITY",
+            "float3": "GROWTH"
+        },
+        "who": {
+            "eyebrow": "WHO WE ARE",
+            "titleLine1": "More Than Services.",
+            "titleLine2": "A Strategic Partner.",
+            "p1": "VARCHASV is a brand-building and digital solutions partner focused on helping businesses create a strong identity and establish a powerful public presence.",
+            "p2": "We bring together branding, digital marketing, communication, technology and creative thinking to support businesses at every stage of their journey.",
+            "p3": "Whether you are starting something new, building recognition or taking your business to the next level, we help turn your vision into a clear and actionable direction."
+        },
+        "vision": {
+            "eyebrow": "OUR VISION",
+            "title": "To Make Every Brand Recognizable.",
+            "desc": "To create a world where businesses of every size can build a distinctive identity, earn recognition and establish a meaningful presence in the digital world."
+        },
+        "mission": {
+            "eyebrow": "OUR MISSION",
+            "title": "To Turn Ambitions Into Impact.",
+            "desc": "To empower businesses through strategic branding, creative communication, digital innovation and growth-focused solutions that create lasting value."
+        },
+        "valuesSection": {
+            "eyebrow": "WHAT DEFINES US",
+            "titleLine1": "Our Values.",
+            "titleLine2": "Our Foundation.",
+            "desc": "The principles that guide our thinking, shape our work and define every relationship we build.",
+            "items": {
+                "creativity": {
+                    "title": "Creativity",
+                    "description": "We believe every brand has a unique story. We bring ideas to life through thoughtful creativity and meaningful experiences."
+                },
+                "trust": {
+                    "title": "Trust",
+                    "description": "Strong brands are built on trust. We value transparency, consistency and relationships that grow over time."
+                },
+                "purpose": {
+                    "title": "Purpose",
+                    "description": "Every strategy begins with a clear purpose. We focus on meaningful work that moves businesses towards their goals."
+                },
+                "growth": {
+                    "title": "Growth",
+                    "description": "We think beyond short-term visibility and focus on building sustainable brand recognition and long-term growth."
+                },
+                "commitment": {
+                    "title": "Commitment",
+                    "description": "We treat every business vision with care, dedication and the responsibility it deserves."
+                },
+                "excellence": {
+                    "title": "Excellence",
+                    "description": "From the smallest detail to the biggest strategy, we strive to create work that makes a lasting impression."
+                }
+            }
+        },
+        "capabilitiesSection": {
+            "eyebrow": "THE VARCHASV APPROACH",
+            "titleLine1": "Everything Your Brand Needs",
+            "titleLine2": "To Stand Out.",
+            "desc": "We connect the important elements of brand building to create one consistent and powerful presence.",
+            "items": {
+                "brandIdentity": {
+                    "title": "Brand Identity",
+                    "description": "Create a distinctive identity people can recognize and remember."
+                },
+                "digitalPresence": {
+                    "title": "Digital Presence",
+                    "description": "Build a strong, consistent and professional online presence."
+                },
+                "publicPresence": {
+                    "title": "Public Presence",
+                    "description": "Communicate your story and strengthen how people perceive your brand."
+                },
+                "businessGrowth": {
+                    "title": "Business Growth",
+                    "description": "Turn strategic visibility into meaningful business opportunities."
+                }
+            }
+        },
+        "processSection": {
+            "eyebrow": "HOW WE WORK",
+            "titleLine1": "From Vision",
+            "titleLine2": "To Varchasv.",
+            "desc": "A thoughtful process that takes your business from an idea to a recognizable and growing brand.",
+            "items": {
+                "understand": {
+                    "title": "Understand",
+                    "description": "We understand your business, vision, audience, challenges and long-term ambitions."
+                },
+                "strategize": {
+                    "title": "Strategize",
+                    "description": "We develop a clear direction and create a strategy aligned with your brand goals."
+                },
+                "create": {
+                    "title": "Create",
+                    "description": "We transform strategy into identity, communication, creative experiences and digital solutions."
+                },
+                "grow": {
+                    "title": "Grow",
+                    "description": "We help strengthen your presence, connect with your audience and move your business forward."
+                }
+            }
+        },
+        "finalMessage": {
+            "eyebrow": "YOUR JOURNEY STARTS HERE",
+            "titleLine1": "Don't Just Build",
+            "titleLine2": "a Business.",
+            "titleLine3": "Build Your Varchasv.",
+            "desc": "Your ideas deserve recognition. Your business deserves a strong identity. Let's build something that people remember.",
+            "cta": "Let's Create Something Extraordinary"
+        }
+    },
+    "ServicesPage": {
+        "hero": {
+            "eyebrow": "WHAT WE DO",
+            "titleLine1": "One partner.",
+            "titleLine2": "Every possibility.",
+            "subtitle": "Integrated services designed to build stronger brands and accelerate business growth."
+        },
+        "expertise": {
+            "eyebrow": "OUR EXPERTISE",
+            "title": "Solutions that move you forward",
+            "description": "Choose the capabilities you need today. Combine them to create even greater impact tomorrow."
+        }
+    },
+    "PrivacyPage": {
+        "backToHome": "Back to home",
+        "legalBadge": "Legal",
+        "title": "Privacy Policy",
+        "lastUpdated": "Last updated",
+        "intro": "At varchasv India (\"we\", \"us\", \"our\"), we respect your privacy and are committed to protecting your personal information. This Privacy Policy explains what data we collect, why we collect it, and how you can control it.",
+        "s1": {
+            "title": "1. Information We Collect",
+            "p1": "We collect information you voluntarily provide and information collected automatically when you use our website.",
+            "l1": "<strong>Contact information</strong> - name, email, phone number, company name when you fill out a form.",
+            "l2": "<strong>Project information</strong> - details you share when enquiring about our services.",
+            "l3": "<strong>Usage data</strong> - IP address, browser type, pages visited, time spent, referral source.",
+            "l4": "<strong>Cookies</strong> - small files that help us improve your experience."
+        },
+        "s2": {
+            "title": "2. How We Use Your Information",
+            "l1": "Respond to your enquiries and provide our services.",
+            "l2": "Send project updates, invoices, and important communications.",
+            "l3": "Improve our website, content, and user experience.",
+            "l4": "Comply with legal obligations under Indian law.",
+            "p1": "We <strong>never sell</strong> your personal data to third parties."
+        },
+        "s3": {
+            "title": "3. How We Protect Your Data",
+            "p1": "We use industry-standard safeguards - SSL/TLS encryption, secure hosting, access controls, and encrypted storage - to protect your data. However, no transmission over the internet is 100% secure."
+        },
+        "s4": {
+            "title": "4. Cookies & Tracking",
+            "p1": "We use essential cookies (site functionality) and analytics cookies (Google Analytics, Vercel Analytics) to understand how visitors use our site. You can disable cookies in your browser settings - some features may stop working."
+        },
+        "s5": {
+            "title": "5. Third-Party Services",
+            "p1": "We use trusted third parties to run our business:",
+            "l1": "<strong>Vercel</strong> - hosting and analytics",
+            "l2": "<strong>Google</strong> - analytics and fonts",
+            "l3": "<strong>Email providers</strong> - transactional emails",
+            "p2": "Each has its own privacy policy that we encourage you to review."
+        },
+        "s6": {
+            "title": "6. Your Rights",
+            "p1": "Under the Digital Personal Data Protection Act (India) and general data protection best practices, you have the right to:",
+            "l1": "Access the personal data we hold about you.",
+            "l2": "Request correction of inaccurate information.",
+            "l3": "Request deletion of your data.",
+            "l4": "Withdraw consent at any time."
+        },
+        "s7": {
+            "title": "7. Data Retention",
+            "p1": "We retain your personal data only as long as necessary to fulfil the purpose it was collected for, or to comply with legal obligations. Enquiry data is typically kept for <strong>24 months</strong>."
+        },
+        "s8": {
+            "title": "8. Contact Us",
+            "p1": "If you have questions about this Privacy Policy or your data:"
+        },
+        "s9": {
+            "title": "9. Changes to This Policy",
+            "p1": "We may update this Privacy Policy from time to time. The \"Last updated\" date at the top will reflect the most recent revision. Continued use of our website after changes constitutes acceptance."
+        },
+        "footer": {
+            "p1": "By using varchasvindia.com, you agree to this Privacy Policy. If you do not agree, please discontinue use of our site. See also our",
+            "link": "Terms & Conditions"
+        }
+    },
+    "TermsPage": {
+        "backToHome": "Back to home",
+        "legalBadge": "Legal",
+        "title": "Terms & Conditions",
+        "lastUpdated": "Last updated",
+        "intro": "These Terms & Conditions (\"Terms\") govern your use of varchasvindia.com and the services provided by varchasv India (\"we\", \"us\", \"our\"). By accessing or using our site and services, you agree to these Terms.",
+        "s1": {
+            "title": "1. Acceptance of Terms",
+            "p1": "By accessing varchasvindia.com or engaging our services, you confirm that you have read, understood, and agree to be bound by these Terms. If you do not agree, please do not use our site or services."
+        },
+        "s2": {
+            "title": "2. Services",
+            "p1": "varchasv India provides digital marketing, branding, PR, website design, and related consulting services. The specific scope, deliverables, timeline, and pricing for each engagement are defined in a separate written proposal or agreement signed by both parties.",
+            "p2": "We reserve the right to refuse service, modify offerings, or discontinue services at our discretion."
+        },
+        "s3": {
+            "title": "3. Payment Terms",
+            "l1": "Invoices are due within <strong>7–15 days</strong> of issuance unless otherwise agreed.",
+            "l2": "Advance payment (typically 50%) is required before project commencement.",
+            "l3": "Late payments may attract interest at <strong>1.5% per month</strong>.",
+            "l4": "All prices are exclusive of GST unless stated otherwise.",
+            "l5": "Refunds are not provided once work has commenced, except as required by law."
+        },
+        "s4": {
+            "title": "4. Intellectual Property",
+            "p1": "Upon full payment, ownership of <strong>final deliverables</strong> (logos, websites, campaign assets) transfers to the client, unless otherwise stated in the project agreement.",
+            "p2": "varchasv India retains ownership of its <strong>pre-existing tools, templates, frameworks, and code libraries</strong>, and may reuse them in other projects.",
+            "p3": "All content on varchasvindia.com - including text, design, logos, and graphics - is our property or licensed to us, and may not be copied or reused without written permission."
+        },
+        "s5": {
+            "title": "5. Prohibited Conduct",
+            "p1": "You agree not to:",
+            "l1": "Use our website for any unlawful purpose.",
+            "l2": "Attempt to gain unauthorised access to our systems.",
+            "l3": "Copy, scrape, or reproduce our content without permission.",
+            "l4": "Transmit viruses, malware, or harmful code.",
+            "l5": "Impersonate another person or entity."
+        },
+        "s6": {
+            "title": "6. Confidentiality",
+            "p1": "Both parties agree to keep confidential any business, technical, or financial information disclosed during the engagement. This obligation survives the termination of any agreement."
+        },
+        "s7": {
+            "title": "7. Limitation of Liability",
+            "p1": "To the maximum extent permitted by law, varchasv India shall not be liable for any indirect, incidental, or consequential damages arising from your use of our website or services. Our total liability shall not exceed the fees paid by you in the <strong>preceding 3 months</strong>.",
+            "p2": "We do not guarantee specific business results (rankings, traffic, revenue) from any marketing or SEO campaign."
+        },
+        "s8": {
+            "title": "8. Governing Law & Disputes",
+            "p1": "These Terms are governed by the laws of <strong>India</strong>. Any dispute shall be subject to the exclusive jurisdiction of the courts in <strong>Raipur, Chhattisgarh</strong>.",
+            "p2": "Before litigation, both parties agree to attempt good-faith resolution through discussion for at least 30 days."
+        },
+        "s9": {
+            "title": "9. Termination",
+            "p1": "Either party may terminate a project agreement with <strong>15 days written notice</strong>. Fees for work completed up to the termination date remain payable. Sections that by their nature survive termination (IP, confidentiality, liability) shall continue in effect."
+        },
+        "s10": {
+            "title": "10. Changes to Terms",
+            "p1": "We may update these Terms at any time. The \"Last updated\" date will reflect changes. Continued use of our site or services after changes constitutes your acceptance of the revised Terms."
+        },
+        "s11": {
+            "title": "11. Contact Us",
+            "p1": "For questions about these Terms:"
+        },
+        "footer": {
+            "p1": "By using varchasvindia.com, you acknowledge that you have read and agree to these Terms & Conditions. See also our",
+            "link": "Privacy Policy"
+        }
+    },
+    "RefundPage": {
+        "backToHome": "Back to home",
+        "legalBadge": "Legal",
+        "title": "Refund & Cancellation Policy",
+        "lastUpdated": "Last updated",
+        "intro": "At varchasv India, we believe in transparency. This Refund & Cancellation Policy explains when and how refunds are issued for our digital marketing, branding, PR, and web development services. Our goal is to be fair to both our clients and our team, while fully complying with the Consumer Protection Act, 2019 and applicable Indian law.",
+        "s1": {
+            "title": "1. Scope of This Policy",
+            "p1": "This policy applies to all paid engagements including:",
+            "l1": "Digital marketing retainers (monthly)",
+            "l2": "Project-based work (branding, website design, campaigns)",
+            "l3": "Consulting and strategy sessions",
+            "p2": "It does <strong>not</strong> apply to third-party ad spend paid directly to Google, Meta, or other platforms - those are governed by the platforms' own policies."
+        },
+        "s2": {
+            "title": "2. Refund Structure by Project Stage",
+            "p1": "Refunds are calculated based on the <strong>stage of work</strong> at the time of cancellation. This protects both parties - you only pay for work actually delivered.",
+            "tableHead1": "Project Stage",
+            "tableHead2": "Refund Amount",
+            "t1c1": "Before contract signing / before payment",
+            "t1c2": "100% refund",
+            "t2c1": "Contract signed, work not yet started (within 3 days)",
+            "t2c2": "85% refund (15% admin fee)",
+            "t3c1": "Discovery / research phase (0-25% complete)",
+            "t3c2": "60% of remaining amount",
+            "t4c1": "Design / development phase (26-50% complete)",
+            "t4c2": "40% of remaining amount",
+            "t5c1": "Execution phase (51-75% complete)",
+            "t5c2": "20% of remaining amount",
+            "t6c1": "Final phase (76-100% complete) or post-delivery",
+            "t6c2": "No refund",
+            "p2": "\"Remaining amount\" = total project fee minus fees already earned for completed work, minus any third-party costs already incurred."
+        },
+        "s3": {
+            "title": "3. Non-Refundable Items",
+            "p1": "The following are strictly non-refundable once incurred:",
+            "l1": "<strong>Ad spend</strong> paid to Google Ads, Meta Ads, LinkedIn, or any other advertising platform",
+            "l2": "<strong>Third-party costs</strong> - domains, hosting, premium plugins, stock photos, software licences, API credits",
+            "l3": "<strong>Completed & approved deliverables</strong> - final logos, launched websites, published content, approved campaigns",
+            "l4": "<strong>Setup / onboarding fees</strong> once work has begun",
+            "l5": "<strong>Payment gateway fees</strong> charged by Razorpay, Stripe, or your bank",
+            "l6": "<strong>Rush fees</strong> for expedited delivery"
+        },
+        "s4": {
+            "title": "4. What Qualifies for a Refund",
+            "p1": "We will issue a refund in these situations:",
+            "l1": "We fail to deliver the agreed scope <strong>without a valid reason</strong>",
+            "l2": "We miss the agreed deadline by more than <strong>30 days</strong> due to our own fault",
+            "l3": "You were <strong>charged twice</strong> for the same invoice",
+            "l4": "You cancel <strong>before any work has begun</strong>",
+            "l5": "We are unable to start your project and cannot offer an alternative"
+        },
+        "s5": {
+            "title": "5. What Does NOT Qualify for a Refund",
+            "l1": "<strong>Change of mind</strong> after work has begun",
+            "l2": "<strong>Subjective dissatisfaction</strong> - deliverables that meet the agreed brief but don't match personal taste",
+            "l3": "<strong>Business results</strong> - SEO rankings, ad performance, or sales outcomes (see Section 8)",
+            "l4": "<strong>Delays caused by you</strong> - late feedback, missing content, unresponsive communication",
+            "l5": "<strong>Scope creep</strong> - requesting changes outside the original agreement",
+            "l6": "<strong>Platform policy changes</strong> by Google, Meta, or other third parties"
+        },
+        "s6": {
+            "title": "6. How to Cancel",
+            "p1": "To cancel a project or retainer:",
+            "l1": "Email us at <a href='mailto:info@varchasv.com' class='text-[#19ddcf] hover:underline'>info@varchasv.com</a> with the subject line <strong>\"Cancellation Request\"</strong>",
+            "l2": "Include your <strong>invoice number</strong> and reason for cancellation",
+            "l3": "We will acknowledge within <strong>2 business days</strong>",
+            "l4": "Final refund calculation shared within <strong>7 business days</strong>",
+            "p2": "<strong>Monthly retainers:</strong> require <strong>15 days written notice</strong> before the next billing cycle. No partial refunds for the current month once it has started."
+        },
+        "s7": {
+            "title": "7. Refund Processing",
+            "l1": "Approved refunds are processed within <strong>7-10 business days</strong>",
+            "l2": "Refunds are issued via the <strong>same payment method</strong> used for the original transaction",
+            "l3": "Bank / payment gateway charges (2-3%) may be deducted",
+            "l4": "GST is refunded only if the original invoice was GST-inclusive"
+        },
+        "s8": {
+            "title": "8. No Guarantee of Results",
+            "p1": "Digital marketing outcomes - including SEO rankings, ad performance, lead volume, conversions, and revenue - depend on many factors outside our control (algorithm changes, competition, market conditions, your product, your pricing).",
+            "p2": "<strong>We do not guarantee specific results and therefore cannot issue refunds based on marketing outcomes alone.</strong> However, if we fail to deliver the agreed <em>work</em> (not the result), the refund structure in Section 2 applies."
+        },
+        "s9": {
+            "title": "9. Disputes & Grievance Redressal",
+            "p1": "In line with the <strong>Consumer Protection (E-Commerce) Rules, 2020</strong>, we have a Grievance Officer to resolve complaints promptly.",
+            "officer": "Grievance Officer",
+            "team": "varchasv India Support Team",
+            "l1": "Complaints acknowledged within <strong>48 hours</strong>",
+            "l2": "Resolution within <strong>1 month</strong>",
+            "l3": "If unresolved, you may escalate to the <strong>National Consumer Helpline (1915)</strong> or the appropriate Consumer Commission"
+        },
+        "s10": {
+            "title": "10. Your Statutory Rights",
+            "p1": "Nothing in this Refund Policy limits your statutory rights under the <strong>Consumer Protection Act, 2019</strong>, the <strong>Indian Contract Act, 1872</strong>, or any other applicable law. If a refund clause is deemed unfair, you retain the right to seek remedies from the appropriate forum."
+        },
+        "s11": {
+            "title": "11. Contact Us",
+            "p1": "For any questions about this policy:"
+        },
+        "footer": {
+            "p1": "This Refund Policy should be read together with our",
+            "terms": "Terms & Conditions",
+            "and": "and",
+            "privacy": "Privacy Policy",
+            "p2": "By engaging varchasv India, you acknowledge and accept this policy."
+        }
+    }
 }

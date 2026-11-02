@@ -1,17 +1,17 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 import { ArrowUpRight, Calendar, Clock, Tag } from "lucide-react";
 import { blogPosts } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: "Blog | Insights on Marketing, Branding & Digital Growth",
-  description:
-    "Read the latest insights from varchasv India on digital marketing, branding, PR, startup strategy and business growth.",
-  alternates: { canonical: "https://www.varchasvindia.com/blog" },
+  title: "Blog | varchasv India",
+  description: "Read the latest insights from varchasv India on digital marketing, branding, PR, startup strategy and business growth.",
 };
 
 export default function BlogPage() {
+  const t = useTranslations("Blog");
   const featuredPost = blogPosts.find((p) => p.featured);
   const otherPosts = blogPosts.filter((p) => !p.featured);
 
@@ -21,20 +21,20 @@ export default function BlogPage() {
         {/* Header */}
         <div className="mb-14">
           <p className="text-xs font-bold tracking-widest text-[#f04491] uppercase mb-3">
-            Insights
+            {t("eyebrow")}
           </p>
           <h1 className="font-heading text-4xl md:text-6xl font-extrabold mb-4 leading-[1.15] tracking-[-2px] text-[#f7f6ff]">
-            Ideas that move brands{" "}
+            {t("titleLine1")}{" "}
             <span className="bg-gradient-to-r from-[#ff7a75] via-[#ed4599] to-[#b14edb] bg-clip-text text-transparent">
-              forward.
+              {t("titleLine2")}
             </span>
           </h1>
           <p className="text-[13px] text-[#a7a6bd] max-w-2xl leading-[1.9]">
-            Practical thinking on marketing, branding and growth - written by the team at varchasv India.
+            {t("subtitle")}
           </p>
         </div>
 
-        {/* Featured */}
+        {/* Featured Post */}
         {featuredPost && (
           <Link
             href={`/blog/${featuredPost.slug}`}
@@ -54,7 +54,7 @@ export default function BlogPage() {
               <div className="p-8 md:p-10 flex flex-col justify-center">
                 <div className="flex items-center gap-3 mb-4">
                   <span className="text-[10px] font-bold px-3 py-1.5 rounded-full bg-[rgba(240,68,145,.12)] text-[#ff76a9] uppercase tracking-[1px]">
-                    Featured
+                    {t("featured")}
                   </span>
                   <span className="text-[11px] text-[#a7a6bd]">{featuredPost.category}</span>
                 </div>
@@ -68,16 +68,14 @@ export default function BlogPage() {
                   <span className="flex items-center gap-1.5">
                     <Calendar size={14} />
                     {new Date(featuredPost.date).toLocaleDateString("en-US", {
-                      year: "numeric",
-                      month: "short",
-                      day: "numeric",
+                      year: "numeric", month: "short", day: "numeric",
                     })}
                   </span>
                   <span className="flex items-center gap-1.5">
                     <Clock size={14} /> {featuredPost.readTime}
                   </span>
                   <span className="flex items-center gap-1.5 text-[#f06a9f] ml-auto group-hover:translate-x-1 transition-transform">
-                    Read <ArrowUpRight size={16} />
+                    {t("read")} <ArrowUpRight size={16} />
                   </span>
                 </div>
               </div>
@@ -85,7 +83,7 @@ export default function BlogPage() {
           </Link>
         )}
 
-        {/* Grid */}
+        {/* Grid of Posts */}
         <div className="grid md:grid-cols-2 gap-6">
           {otherPosts.map((post) => (
             <Link
@@ -117,9 +115,7 @@ export default function BlogPage() {
                   <span className="flex items-center gap-1.5">
                     <Calendar size={12} />
                     {new Date(post.date).toLocaleDateString("en-US", {
-                      year: "numeric",
-                      month: "short",
-                      day: "numeric",
+                      year: "numeric", month: "short", day: "numeric",
                     })}
                   </span>
                   <span className="flex items-center gap-1.5">

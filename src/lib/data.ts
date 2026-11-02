@@ -8,70 +8,85 @@ import {
   type LucideIcon,
 } from "lucide-react";
 
+// ─────────────────────────────────────────────────────────────
+// NAV
+// ─────────────────────────────────────────────────────────────
 export const navLinks = [
-  { label: "Home", href: "/" },
-  { label: "Services", href: "/services" },
-  { label: "About", href: "/about" },
-  { label: "Case Studies", href: "/projects" },
-  { label: "Blog", href: "/blog" },
+  { key: "home", label: "Home", href: "/" },
+  { key: "services", label: "Services", href: "/services" },
+  { key: "about", label: "About", href: "/about" },
+  { key: "projects", label: "Case Studies", href: "/projects" },
+  { key: "blog", label: "Blog", href: "/blog" },
 ];
 
+// ─────────────────────────────────────────────────────────────
+// SERVICES
+// ─────────────────────────────────────────────────────────────
 export type Service = {
+  number: string;
+  key: string; // ← used to look up JSON translations
   title: string;
   description: string;
   icon: LucideIcon;
-  number: string;
 };
 
 export const services: Service[] = [
   {
     number: "01",
+    key: "digitalMarketing",
     title: "Digital Marketing",
     description: "SEO, Social Media, Paid Ads, Content & more.",
     icon: Megaphone,
   },
   {
     number: "02",
+    key: "startupSupport",
     title: "Startup Support",
     description: "Strategy, Funding, Mentorship, Growth.",
     icon: Rocket,
   },
   {
     number: "03",
+    key: "prMedia",
     title: "PR & Media",
     description: "Media Relations, Brand PR, Thought Leadership.",
     icon: Radio,
   },
   {
     number: "04",
+    key: "website",
     title: "Website Design & Development",
     description: "Modern, Scalable, SEO-friendly Websites.",
     icon: PanelsTopLeft,
   },
   {
     number: "05",
+    key: "branding",
     title: "Branding & Design",
     description: "Logo, Identity, Creative, Positioning.",
     icon: Heart,
   },
   {
     number: "06",
+    key: "digitalSolutions",
     title: "Digital Solutions",
     description: "Automation, Analytics, CRM & More.",
     icon: Workflow,
   },
 ];
 
+// ─────────────────────────────────────────────────────────────
+// STATS
+// ─────────────────────────────────────────────────────────────
 export const stats = [
-  { value: "500+", label: "Projects Delivered" },
-  { value: "200+", label: "Happy Clients" },
-  { value: "15+", label: "Industries Served" },
-  { value: "95%", label: "Client Retention Rate" },
+  { key: "projects", value: "15+", label: "Projects Delivered" },
+  { key: "clients", value: "10+", label: "Happy Clients" },
+  { key: "industries", value: "5+", label: "Industries Served" },
+  { key: "retention", value: "95%", label: "Client Retention Rate" },
 ];
 
 // ─────────────────────────────────────────────────────────────
-// PROJECTS / PORTFOLIO
-// Added: slug (URL), description (detail page content)
+// PROJECTS
 // ─────────────────────────────────────────────────────────────
 export type Project = {
   slug: string;
@@ -121,7 +136,6 @@ export const projects: Project[] = [
 
 // ─────────────────────────────────────────────────────────────
 // PARTNERS
-// Drop real logos into public/images/partners/ and update paths
 // ─────────────────────────────────────────────────────────────
 export type Partner = {
   name: string;
@@ -132,28 +146,32 @@ export type Partner = {
 export const partners: Partner[] = [
   {
     name: "Partner A",
-    logo: "/images/partners/a.png",
-    website: "https://example.com",
+    logo: "/images/partners/Bose Academy.png",
+    website: "https://play.google.com/store/apps/details?id=co.griffin.qlwmi&hl=en_IN",
   },
   {
     name: "Partner B",
-    logo: "/images/partners/b.png",
-    website: "https://example.com",
+    logo: "/images/partners/cgkalarmahasangh.jpeg",
+    website: "https://www.cgkalarmahasangh.com/",
   },
   {
     name: "Partner C",
-    logo: "/images/partners/c.png",
-    website: "https://example.com",
+    logo: "/images/partners/LOGO-BOSE-BRIGADE.jpg",
+    website: "https://bosebrigade.com/",
   },
   {
     name: "Partner D",
-    logo: "/images/partners/d.png",
-    website: "https://example.com",
+    logo: "/images/partners/LOGO-BOSE-BRIGADE.jpg",
+    website: "https://bosebrigade.com/",
   },
 ];
 
+// ─────────────────────────────────────────────────────────────
+// TESTIMONIALS
+// ─────────────────────────────────────────────────────────────
 export const testimonials = [
   {
+    key: "neha",
     quote:
       "varchasv India helped us build a powerful brand presence and drive meaningful results. Their team is professional, creative and committed.",
     name: "Neha Kapoor",
@@ -161,6 +179,7 @@ export const testimonials = [
     initials: "NK",
   },
   {
+    key: "arjun",
     quote:
       "A thoughtful team that understood our goals and translated them into a digital experience that feels distinctive and performs beautifully.",
     name: "Arjun Mehta",
@@ -168,6 +187,7 @@ export const testimonials = [
     initials: "AM",
   },
   {
+    key: "priya",
     quote:
       "From strategy to execution, the varchasv team brought clarity, consistency and fresh ideas to every part of our campaign.",
     name: "Priya Sharma",
@@ -176,6 +196,19 @@ export const testimonials = [
   },
 ];
 
+// ─────────────────────────────────────────────────────────────
+// CONTACT
+// ─────────────────────────────────────────────────────────────
+export const contact = {
+  email: "varchasvind@gmail.com",
+  phone: "+91 91719 00017",
+  location:
+    "Flat No. 101, C Block, Vinayak Heights, Zora, Raipur Chhattisgarh 492012",
+};
+
+// ─────────────────────────────────────────────────────────────
+// BLOG POSTS
+// ─────────────────────────────────────────────────────────────
 export type BlogPost = {
   slug: string;
   title: string;
@@ -184,8 +217,8 @@ export type BlogPost = {
   readTime: string;
   category: string;
   author: string;
-  image: string; // ← new
-  featured?: boolean; // ← new (only one should be true)
+  image: string;
+  featured?: boolean;
   content: string;
 };
 
@@ -325,10 +358,3 @@ At varchasv, we build the entire system - from logo to landing pages - so everyt
     `,
   },
 ];
-
-export const contact = {
-  email: "info@varchasvindia.com",
-  phone: "+91 91719 00017",
-  location:
-    "Flat No. 101, C Block, Vinayak Heights, Zora, Raipur Chhattisgarh 492012",
-};

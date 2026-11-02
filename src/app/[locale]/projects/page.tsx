@@ -1,14 +1,19 @@
 import { projects } from "@/lib/data";
 import Image from "next/image";
-import Link from "next/link";
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 
 export default function ProjectsPage() {
+  const t = useTranslations("Projects");
+
   return (
-    <section className="py-20 px-6 md:px-12">
+    <section className="py-20 px-6 md:px-12 bg-[#09091a]">
       <div className="container mx-auto">
-        <h1 className="text-4xl font-bold mb-2">Our Projects</h1>
-        <p className="text-gray-400 mb-12">
-          A selection of work we're proud of.
+        <h1 className="text-4xl md:text-5xl font-bold mb-2 text-[#f7f6ff]">
+          {t("title")}
+        </h1>
+        <p className="text-[#a7a6bd] mb-12">
+          {t("subtitle")}
         </p>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -18,7 +23,7 @@ export default function ProjectsPage() {
               href={`/projects/${project.slug}`}
               className="group block"
             >
-              <div className="relative h-72 rounded-2xl overflow-hidden mb-4">
+              <div className="relative h-72 rounded-2xl overflow-hidden mb-4 border border-[rgba(174,171,224,.16)]">
                 <Image
                   src={project.image}
                   alt={project.name}
@@ -26,12 +31,15 @@ export default function ProjectsPage() {
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
                 />
-                <span className="absolute top-4 left-4 text-xs bg-black/60 backdrop-blur px-3 py-1 rounded-full">
+                <div className="absolute inset-0 bg-gradient-to-t from-[#09091a] to-transparent opacity-60" />
+                <span className="absolute top-4 left-4 text-[10px] font-bold tracking-wider uppercase bg-[rgba(19,220,202,.15)] text-[#21e0cf] backdrop-blur-md px-3 py-1.5 rounded-full border border-[rgba(28,219,205,.3)]">
                   {project.category}
                 </span>
               </div>
-              <h2 className="text-xl font-bold">{project.name}</h2>
-              <p className="text-sm text-gray-400">{project.type}</p>
+              <h2 className="text-xl font-bold text-[#f7f6ff] group-hover:text-[#19ddcf] transition-colors">
+                {project.name}
+              </h2>
+              <p className="text-sm text-[#a7a6bd]">{project.type}</p>
             </Link>
           ))}
         </div>

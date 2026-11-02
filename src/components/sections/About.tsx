@@ -1,35 +1,36 @@
 // src/components/sections/About.tsx
 
+"use client";
+
 import Image from "next/image";
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation"; // Locale-aware Link
 import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
 
 export default function About() {
+  const t = useTranslations("About");
+
   return (
     <section className="about-section section" id="about">
       <Container>
         <div className="about-grid">
           <div className="about-copy">
-            <span className="eyebrow">ABOUT VARCHASV INDIA</span>
+            <span className="eyebrow">{t("eyebrow")}</span>
 
             <h2>
-              We Build Brands
+              {t("titleLine1")}
               <br />
-              That Lead.
+              {t("titleLine2")}
             </h2>
 
-            <p>
-              We are a full-service digital marketing and branding firm,
-              empowering startups and businesses with innovative strategies,
-              creative storytelling and technology-driven solutions.
-            </p>
+            <p>{t("paragraph1")}</p>
+            <p>{t("paragraph2")}</p>
 
-            <p>
-              Our approach brings clarity to your brand, connects you with the
-              right audience and turns ambitious ideas into measurable progress.
-            </p>
-
-            <Button href="/about">Know More</Button>
+            {/* Use locale-aware Link so it routes to /hi/about */}
+            <Link href="/about">
+              <Button>{t("cta")}</Button>
+            </Link>
           </div>
 
           <div className="about-image-wrap">

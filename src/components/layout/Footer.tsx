@@ -1,7 +1,10 @@
-import Link from "next/link";
+"use client";
+
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 import { Instagram, Linkedin, Facebook, Mail, Phone, MapPin } from "lucide-react";
 import Brand from "./Brand";
-import { contact, navLinks } from "@/lib/data";
+import { contact, navLinks, services } from "@/lib/data";
 
 const socials = [
   { label: "Instagram", href: "https://www.instagram.com/officialvarchasv", Icon: Instagram },
@@ -9,16 +12,11 @@ const socials = [
   { label: "Facebook", href: "https://www.facebook.com/officialvarchasv", Icon: Facebook },
 ];
 
-const services = [
-  "Digital Marketing",
-  "Startup Support",
-  "PR & Media",
-  "Website Design & Development",
-  "Branding & Design",
-  "Digital Solutions",
-];
-
 export default function Footer() {
+  const t = useTranslations("Footer");
+  const tNav = useTranslations("Nav");
+  const tServices = useTranslations("Services.items");
+
   return (
     <footer className="site-footer">
       {/* Ambient glows + subtle grid */}
@@ -31,10 +29,7 @@ export default function Footer() {
         <div className="footer-main">
           <div className="footer-brand-col">
             <Brand footer />
-            <p className="footer-desc">
-              A full-service marketing, PR and branding firm helping ambitious
-              brands grow through strategy, creativity and measurable outcomes.
-            </p>
+            <p className="footer-desc">{t("tagline")}</p>
             <div className="socials">
               {socials.map(({ label, href, Icon }) => (
                 <a
@@ -51,32 +46,38 @@ export default function Footer() {
           </div>
 
           <nav aria-label="Explore">
-            <h4 className="footer-heading">Explore</h4>
+            <h4 className="footer-heading">{t("exploreHeading")}</h4>
             <ul className="footer-links">
               {navLinks.slice(0, 4).map((x) => (
                 <li key={x.href}>
-                  <Link href={x.href}>{x.label}</Link>
+                  <Link href={x.href}>
+                    {/* ✅ FIXED: Use x.key directly */}
+                    {tNav(x.key as any)}
+                  </Link>
                 </li>
               ))}
               <li>
-                <Link href="/contact">Contact</Link>
+                <Link href="/contact">{tNav("contact")}</Link>
               </li>
             </ul>
           </nav>
 
           <nav aria-label="Services">
-            <h4 className="footer-heading">Services</h4>
+            <h4 className="footer-heading">{t("servicesHeading")}</h4>
             <ul className="footer-links">
               {services.map((s) => (
-                <li key={s}>
-                  <Link href="/services">{s}</Link>
+                <li key={s.key}>
+                  <Link href="/services">
+                    {/* Pull the translated title from the Services JSON */}
+                    {tServices(`${s.key}.title`)}
+                  </Link>
                 </li>
               ))}
             </ul>
           </nav>
 
           <div className="footer-contact">
-            <h4 className="footer-heading">Get in touch</h4>
+            <h4 className="footer-heading">{t("contactHeading")}</h4>
             <a href={`mailto:${contact.email}`}>
               <span className="footer-icon">
                 <Mail size={16} />
@@ -101,13 +102,13 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="footer-bottom">
           <span>
-            © {new Date().getFullYear()} varchasv India. All rights reserved.
+            © {new Date().getFullYear()} {t("copyright")}
           </span>
-          <span className="footer-motto">आपका वर्चस्व बना रहे</span>
+          <span className="footer-motto">{t("motto")}</span>
           <div className="footer-legal">
-            <Link href="/privacy">Privacy Policy</Link>
-            <Link href="/terms">Terms &amp; Conditions</Link>
-            <Link href="/refund-policy">Refund Policy</Link>
+            <Link href="/privacy">{t("privacy")}</Link>
+            <Link href="/terms">{t("terms")}</Link>
+            <Link href="/refund-policy">{t("refund")}</Link>
           </div>
         </div>
       </div>

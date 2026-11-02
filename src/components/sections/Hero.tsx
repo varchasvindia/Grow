@@ -3,9 +3,12 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import { useTranslations } from "next-intl";
 import Button from "@/components/ui/Button";
 
 export default function Hero() {
+  const t = useTranslations("Hero");
+
   return (
     <section className="hero">
       <div className="hero-orbit orbit-one" />
@@ -19,35 +22,28 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
         >
-          <span className="eyebrow">
-            MARKETING&nbsp; | &nbsp;PR&nbsp; |&nbsp;DIGITAL SOLUTIONS &nbsp;BRANDING&nbsp; |
-            &nbsp;DIGITAL SOLUTIONS
-          </span>
+          <span className="eyebrow">{t("eyebrow")}</span>
 
           <h1>
-            Your Vision.
+            {t("titleLine1")}
             <br />
-            Our Strategy.
+            {t("titleLine2")}
             <br />
-            <span>Real Growth.</span>
+            <span>{t("titleLine3")}</span>
           </h1>
 
-          <p>
-            We combine creativity, technology and strategy to help your brand
-            stand out, get noticed and scale faster.
-          </p>
+          <p>{t("subtitle")}</p>
 
           <div className="hero-actions">
-            <Button href="/contact">Get Started</Button>
+            <Button href="/contact">{t("ctaPrimary")}</Button>
 
             <a className="text-link" href="/services">
-              Explore Services <ArrowRight size={16} />
+              {t("ctaSecondary")} <ArrowRight size={16} />
             </a>
           </div>
         </motion.div>
 
         {/* BRAND EMBLEM AND ORBITS */}
-
         <div className="hero-art">
           <div className="hero-glow" />
 
@@ -55,16 +51,20 @@ export default function Hero() {
             {/* Outer rotating orbit */}
             <div className="service-orbit">
               <div className="service-orbit-track">
-                <span className="service-label service-top">MARKETING</span>
-
-                <span className="service-label service-right">
-                  PUBLIC RELATIONS
+                <span className="service-label service-top">
+                  {t("orbit.marketing")}
                 </span>
 
-                <span className="service-label service-bottom">BRANDING</span>
+                <span className="service-label service-right">
+                  {t("orbit.pr")}
+                </span>
+
+                <span className="service-label service-bottom">
+                  {t("orbit.branding")}
+                </span>
 
                 <span className="service-label service-left">
-                  DIGITAL SOLUTIONS
+                  {t("orbit.digital")}
                 </span>
               </div>
             </div>
@@ -96,8 +96,8 @@ export default function Hero() {
 
       {/* HERO FOOTER */}
       <div className="hero-bottom container">
-        <span>Ideas that move businesses forward</span>
-        <span className="scroll-indicator">SCROLL TO EXPLORE&nbsp; ↓</span>
+        <span>{t("tagline")}</span>
+        <span className="scroll-indicator">{t("scrollHint")}</span>
       </div>
     </section>
   );
