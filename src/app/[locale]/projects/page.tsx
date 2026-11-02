@@ -12,30 +12,35 @@ export default function ProjectsPage() {
         <h1 className="text-4xl md:text-5xl font-bold mb-2 text-[#f7f6ff]">
           {t("title")}
         </h1>
-        <p className="text-[#a7a6bd] mb-12">
-          {t("subtitle")}
-        </p>
+        <p className="text-[#a7a6bd] mb-12">{t("subtitle")}</p>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project) => (
             <Link
               key={project.slug}
               href={`/projects/${project.slug}`}
-              className="group block"
+              className="group flex flex-col w-full"
             >
-              <div className="relative h-72 rounded-2xl overflow-hidden mb-4 border border-[rgba(174,171,224,.16)]">
+              {/* 
+        ✅ We use standard img tag here or next/image with width/height 
+        to let the image dictate the height naturally (no cropping).
+      */}
+              <div className="relative w-full rounded-2xl overflow-hidden mb-4 border border-[rgba(174,171,224,.16)] bg-[#101027]">
+                {/* ✅ Category Pill - Positioned top left */}
+                <span className="absolute top-3 left-3 z-10 text-[10px] font-bold uppercase tracking-wider text-[#21e0cf] bg-[#09091a]/90 border border-[rgba(174,171,224,.2)] backdrop-blur-md px-3 py-1.5 rounded-full shadow-md">
+                  {project.category}
+                </span>
+
                 <Image
                   src={project.image}
                   alt={project.name}
-                  fill
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  width={900}
+                  height={1200} // Setting a taller height ensures Next.js optimizes for vertical posters
+                  className="w-full h-auto object-contain transition-transform duration-500 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#09091a] to-transparent opacity-60" />
-                <span className="absolute top-4 left-4 text-[10px] font-bold tracking-wider uppercase bg-[rgba(19,220,202,.15)] text-[#21e0cf] backdrop-blur-md px-3 py-1.5 rounded-full border border-[rgba(28,219,205,.3)]">
-                  {project.category}
-                </span>
               </div>
+
+              {/* Project Details */}
               <h2 className="text-xl font-bold text-[#f7f6ff] group-hover:text-[#19ddcf] transition-colors">
                 {project.name}
               </h2>

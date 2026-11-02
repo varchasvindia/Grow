@@ -1,4 +1,10 @@
 {
+    "Metadata": {
+        "title": "Best Digital Marketing & Branding Agency in India | varchasv",
+        "description": "varchasv India is a top-rated digital marketing agency in Chhattisgarh & India. We specialize in SEO, branding, PR, and website development to drive real growth for ambitious businesses.",
+        "ogTitle": "varchasv India | Strategy. Creativity. Real Growth.",
+        "ogDescription": "Helping brands stand out, get noticed, and scale faster through data-driven marketing and premium branding."
+    },
     "Nav": {
         "home": "Home",
         "services": "Services",
@@ -126,7 +132,29 @@
         "title": "Our Projects",
         "subtitle": "A selection of work we're proud of.",
         "backToAll": "Back to Projects",
-        "detailsComingSoon": "Project details coming soon. This is where you describe the challenge, the strategy, and the results delivered for {name}."
+        "detailsComingSoon": "Project details coming soon...",
+        "ctaTitle": "Want similar results for your brand?",
+        "ctaButton": "Let's talk",
+        "items": {
+            "chhattisgarh-kalar-mahasangh": {
+                "name": "Chhattisgarh Kalar Mahasangh",
+                "type": "Community Platform & Digital Presence",
+                "category": "NGO",
+                "description": "Developed a complete digital platform for Chhattisgarh Kalar Mahasangh — a community organization serving 25,000+ members across 33 districts. The site features an education support portal, healthcare camp listings, community member directory, blood donation network, and a donation gateway, giving the Mahasangh a unified digital identity rooted in its Kalachuri dynasty heritage."
+            },
+            "bose-academy": {
+                "name": "Bose Academy",
+                "type": "Education Platform",
+                "category": "Education",
+                "description": "Built a modern learning platform for Bose Academy to support students through structured courses, career guidance, and skill development. The platform delivers an intuitive course catalog, student dashboard, progress tracking, and integrated communication tools, making quality education more accessible to youth across the region."
+            },
+            "bose-brigade": {
+                "name": "Bose Brigade",
+                "type": "Youth Movement Brand & Digital Ecosystem",
+                "category": "Campaign",
+                "description": "Created the complete digital identity and brand ecosystem for BOSE BRIGADE – YOUTH ON KARTAVYAPATH, a youth movement inspired by Netaji Subhas Chandra Bose. We delivered the brand identity, member onboarding system, and a digital platform supporting their three core pillars — Unicorn Startups (entrepreneurship), Social Service, and Political Awareness — amplifying their mission to build a Developed Village, Developed State, and Developed Nation."
+            }
+        }
     },
     "Partners": {
         "titleLine1": "Partners in",

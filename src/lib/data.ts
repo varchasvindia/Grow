@@ -100,37 +100,37 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    slug: "fashion-brand",
-    name: "Fashion Brand",
-    type: "Social Media & Branding",
-    category: "Branding",
-    image:
-      "https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=900&q=85",
+    slug: "chhattisgarh-kalar-mahasangh",
+    name: "Chhattisgarh Kalar Mahasangh",
+    type: "Community Platform & Digital Presence",
+    category: "NGO",
+    // ✅ Local image path
+    image: "/images/projects/cgkalarmahasanngh.webp",
     tag: "01",
     description:
-      "A complete brand refresh for a modern fashion label - new identity, social media strategy, and a content system that lifted engagement and sales across channels.",
+      "A complete digital transformation for the Kalachuri Kalar Mahasangh, serving 25,000+ members across 33 districts. We built a comprehensive community platform to preserve the glorious Kalachuri dynasty heritage, featuring an education support portal, healthcare camp listings, a blood donation network, and a seamless donation gateway. The design reflects their core resolve: united for education, health, and social upliftment.",
   },
   {
-    slug: "edtech-startup",
-    name: "EdTech Startup",
-    type: "Website + Performance Marketing",
-    category: "Digital",
-    image:
-      "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=85",
+    slug: "bose-academy",
+    name: "Bose Academy",
+    type: "Education Platform",
+    category: "Education",
+    // ✅ Local image path
+    image: "/images/projects/bose Academywebp.webp",
     tag: "02",
     description:
-      "Designed and built a conversion-focused website for an EdTech platform, paired with a performance marketing engine that reduced cost per lead while scaling signups.",
+      "Built a modern, intuitive learning platform for Bose Academy to support students through structured courses, career guidance, and skill development. The digital experience is designed to make quality education accessible to the youth, featuring an easy-to-navigate course catalog, student progress tracking, and integrated communication tools.",
   },
   {
-    slug: "healthcare-brand",
-    name: "Healthcare Brand",
-    type: "PR + Digital Campaign",
+    slug: "bose-brigade",
+    name: "Bose Brigade",
+    type: "Youth Movement Brand & Digital Ecosystem",
     category: "Campaign",
-    image:
-      "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=900&q=85",
+    // ✅ Local image path
+    image: "/images/projects/Netaji Bose Patriotic Tribute Poster.webp",
     tag: "03",
     description:
-      "An integrated PR and digital campaign for a healthcare brand - earned media coverage, patient education content, and a measurable lift in appointment bookings.",
+      "Created the complete digital identity and brand ecosystem for BOSE BRIGADE – YOUTH ON KARTAVYAPATH. Inspired by Netaji Subhas Chandra Bose, this movement channels the energy of youth towards a Developed Village, Developed State, and Developed Nation. We developed the brand identity and digital platform to support their three core pillars: Unicorn Startups (Entrepreneurship), Social Service (Samaj Seva), and Politics (Rajneeti).",
   },
 ];
 
@@ -147,7 +147,8 @@ export const partners: Partner[] = [
   {
     name: "Partner A",
     logo: "/images/partners/Bose Academy.png",
-    website: "https://play.google.com/store/apps/details?id=co.griffin.qlwmi&hl=en_IN",
+    website:
+      "https://play.google.com/store/apps/details?id=co.griffin.qlwmi&hl=en_IN",
   },
   {
     name: "Partner B",
